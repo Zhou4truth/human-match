@@ -2,6 +2,8 @@
 
 A facial recognition web application for matching human faces with high precision.
 
+> **IMPORTANT**: This project is currently in development and requires testing before deployment. Please refer to the [Testing](#testing) and [Setup Guide](SETUP.md) documents for more information.
+
 ## Project Overview
 
 Human Match is a web application that allows users to upload images of people and match them against a database of existing images. The application uses state-of-the-art facial recognition technology to determine if the person in the uploaded image matches any person in the database with high precision (90-95% similarity threshold).
@@ -167,6 +169,36 @@ For production deployment, consider:
 2. Setting up proper environment variables
 3. Implementing proper security measures
 4. Using Docker for containerization
+
+## Testing
+
+Before deploying the Human Match application, it's essential to thoroughly test all components to ensure they work correctly. We've created comprehensive testing documentation and tools to help with this process.
+
+### Testing Process
+
+1. **Environment Testing**: Verify that all required dependencies are installed correctly.
+   ```bash
+   ./test-environment.sh
+   ```
+
+2. **Component Testing**: Test individual backend and frontend components.
+   - Backend API testing via Swagger UI: http://localhost:8000/docs
+   - Frontend UI testing: http://localhost:3000
+
+3. **Integration Testing**: Test the complete application flow, including:
+   - User authentication
+   - Image upload
+   - Face matching with 90-95% precision
+   - User profile updates
+
+4. **Docker Testing**: Test the application in a containerized environment.
+
+For detailed testing instructions, refer to the [TESTING.md](TESTING.md) document.
+
+### Known Issues
+
+- The face_recognition library requires specific system dependencies (see [SETUP.md](SETUP.md))
+- Docker and Docker Compose need to be installed for containerized deployment
 
 ## License
 
